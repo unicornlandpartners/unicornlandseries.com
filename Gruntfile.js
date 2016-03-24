@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+
     copy: {
       // copy the latest compiled version of bootstrap to our dist/ folder
       prereqs: {
@@ -20,9 +21,15 @@ module.exports = function(grunt) {
         ],
       },
     },
+
+    'gh-pages': {
+      options: { base: 'dist' },
+      src: ['**']
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
-  grunt.registerTask('default', ['copy']);
+  grunt.registerTask('default', ['copy', 'gh-pages']);
 };

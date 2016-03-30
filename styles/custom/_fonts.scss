@@ -1,8 +1,25 @@
 $sans: "Lato", sans-serif;
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $sans;
+body, h1 {
+	font-family: $sans;
+	font-weight: 300;
+	letter-spacing: .08em;
 }
-p, div {
-  font-family: $sans;
+
+h1 {
+	text-transform: uppercase;
+	letter-spacing: .1em;
 }
+
+.card-text {
+	/*font-size: 22px;*/
+}
+
+a.btn-secondary-outline {
+	color: #999;
+	font-family: 'futura';
+	/*font-size: 14px;*/
+	line-height: 1em;
+	letter-spacing: .2em;
+}
+

@@ -1,14 +1,15 @@
 $sans: "Lato", sans-serif;
+$sans-callout: "europa", "futura", sans-serif;
 
-body, h1 {
+h1, p {
 	font-family: $sans;
 	font-weight: 300;
-	letter-spacing: .08em;
+	letter-spacing: .08rem;
 }
 
 h1 {
 	text-transform: uppercase;
-	letter-spacing: .1em;
+	letter-spacing: .1rem;
 }
 
 .card-text {
@@ -17,9 +18,26 @@ h1 {
 
 a.btn-secondary-outline {
 	color: #999;
-	font-family: 'futura';
-	/*font-size: 14px;*/
-	line-height: 1em;
-	letter-spacing: .2em;
+	font-family: $sans-callout;
+	font-size: .75rem;
+	line-height: 1rem;
+	letter-spacing: .2rem;
 }
 
+@include media-breakpoint-up(sm) {
+  html {
+    /*font-size: 16px;*/
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    /*font-size: 20px;*/
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    /*font-size: 28px;*/
+  }
+}

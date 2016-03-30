@@ -19,7 +19,7 @@ module.exports = function(grunt) {
       },
     },
 
-    //
+    // compile css files to dist/
     sass: {
       dist: {
         options: {
@@ -36,11 +36,19 @@ module.exports = function(grunt) {
     'gh-pages': {
       options: { base: 'dist' },
       src: ['**']
+    },
+
+    watch: {
+      css: {
+        files: '**/*.scss',
+        tasks: [ 'sass:dist' ]
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-gh-pages');
 
   grunt.registerTask('default', ['copy', 'sass', 'gh-pages']);

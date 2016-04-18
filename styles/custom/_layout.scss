@@ -2,10 +2,6 @@
 	border-radius: 0 !important;
 }
 
-body {
-	background-image: url(../img/unicornland_wallpaper.jpg);
-}
-
 #card {
 	height: 100vh;
 
@@ -35,4 +31,30 @@ a.btn-secondary-outline {
 	padding-right: calc(1.44em - .2em);
 	padding-bottom: 1em;
 	padding-left: 1.44em;
+}
+
+.parallax {
+	perspective: 1px;
+	perspective-origin-x: 100%;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&__layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		transform-origin-x: 100%;
+
+		&--base {
+			background-image: url(../img/unicornland_wallpaper.jpg);
+			transform: translateZ(0);
+		}
+
+		&--back {
+			transform: translateZ(-1px);
+		}
+	}
 }
